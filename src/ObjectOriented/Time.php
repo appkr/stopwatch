@@ -15,4 +15,9 @@ class Time
     {
         return (int) $this->second;
     }
+
+    public function asMilliSecond()
+    {
+        return (int) $this->second * 1000;
+    }
 }
