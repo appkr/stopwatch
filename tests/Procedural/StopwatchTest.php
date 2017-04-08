@@ -15,6 +15,14 @@ class StopwatchTest extends TestCase
         var_dump($stopWatch->getElapsedTime());
     }
 
+    public function test_should_return_elapsed_milli_seconds()
+    {
+        $stopWatch = new StopWatch;
+        $stopWatch->setStartMilliTime(microtime(true));
+        $this->doSomething();
+        var_dump($stopWatch->getElapsedMilliTime());
+    }
+
     public function doSomething()
     {
         sleep(1);
