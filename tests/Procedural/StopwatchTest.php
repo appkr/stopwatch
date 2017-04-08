@@ -12,7 +12,7 @@ class StopwatchTest extends TestCase
         $stopWatch = new StopWatch;
         $stopWatch->setStartTime(microtime(true));
         $this->doSomething();
-        var_dump($stopWatch->getElapsedTime());
+        $this->assertGreaterThanOrEqual(1, $stopWatch->getElapsedTime());
     }
 
     public function test_should_return_elapsed_milli_seconds()
@@ -20,7 +20,7 @@ class StopwatchTest extends TestCase
         $stopWatch = new StopWatch;
         $stopWatch->setStartMilliTime(microtime(true));
         $this->doSomething();
-        var_dump($stopWatch->getElapsedMilliTime());
+        $this->assertGreaterThanOrEqual(1000, $stopWatch->getElapsedMilliTime());
     }
 
     public function doSomething()

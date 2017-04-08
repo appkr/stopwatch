@@ -19,11 +19,11 @@ class StopWatch
 
     public function getElapsedTime()
     {
-        return microtime(true) - $this->startTime;
+        return (int) (microtime(true) - $this->startTime);
     }
 
     public function getElapsedMilliTime()
     {
-        return (microtime(true) - $this->startMilliTime) * 1000;
+        return (int) ((microtime(true) - $this->startMilliTime) * 1000);
     }
 }
